@@ -14,8 +14,8 @@ namespace EchoForge.Core.States
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                context.EventBus.Publish(new LevelResetEvent());
                 context.PlayerSystem.Reset();
+                context.EventBus.Publish(new LevelResetEvent());
                 context.EchoTimelineSystem.Reset();
                 context.PuzzleSystem.Reset();
                 context.ChangeState(new PlayingState());
